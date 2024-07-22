@@ -1,0 +1,59 @@
+@import '../../../styles.scss';
+
+.profile-card {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 32px;
+	border: 1px solid $light-color;
+	padding: 32px 24px;
+	&__description {
+		font-weight: 500;
+	}
+	&__tags {
+		width: 200px;
+		display: flex;
+		flex-wrap: wrap;
+		height: min-content;
+		gap: 4px;
+	}
+	&__btns {
+		display: flex;
+		gap: 6px;
+	}
+}
+
+.avatar {
+	display: grid;
+	grid-template-columns: 70px 1fr;
+	align-items: center;
+	gap: 20px;
+	&__img {
+		width: 70px;
+		height: 70px;
+		border-radius: 50%;
+		overflow: hidden;
+		img {
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+	&__name {
+		font-weight: 800;
+	}
+}
+
+.skill-tag {
+	height: 24px;
+	display: inline-block;
+	border: 1px solid $light-color;
+	padding: 4px 8px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 700;
+	cursor: pointer;
+}

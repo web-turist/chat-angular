@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+@import './reset.scss';
+
+$dark-color: #000000;
+$light-color: #FFFFFF;
+$primary-color: #AE7AFF;
+
+body {
+	background: $dark-color;
+	color: $light-color;
+	font-family: 'JetBrains Mono';
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	width: 157px;
+	height: 44px;
+	background: $primary-color;
+	border: 1px solid $dark-color;
+	border-radius: 2px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 24px;
+	cursor: pointer;
+}
+
+.button-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	background: $primary-color;
+	border: 1px solid $dark-color;
+	border-radius: 2px;
+	line-height: 24px;
+	cursor: pointer;
+	img {
+		width: 16px;
+		height: 16px;
+	}
+}
+
+.button-empty {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 44px;
+	height: 44px;
+	background: inherit;
+	border: 1px solid $primary-color;
+	border-radius: 2px;
+	cursor: pointer;
+}

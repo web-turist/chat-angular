@@ -1,0 +1,40 @@
+@if (profile) {
+	<div class="profile-card">
+		<div class="avatar">
+			<div class="avatar__img">
+				<img
+					[src]="profile.avatarUrl | imgUrl"
+					alt="Аватар пользователя"
+				>
+			</div>
+			<div class="avatar__wrapper">
+				<div class="avatar__name">{{ profile.firstName }} {{ profile.lastName }}</div>
+				<div class="avatar__nikname">{{ profile.username }}</div>
+			</div>
+		</div>
+		<div class="profile-card__description">
+			{{ profile.description }}
+		</div>
+		<div class="profile-card__tags">
+			@for (skill of profile.stack; track skill) {
+				<div class="skill-tag">{{ skill }}</div>
+			}
+		</div>
+		<div class="profile-card__btns">
+			<div class="button-empty">
+				<img src="/assets/icons/btn_man_icon.svg" alt="">
+			</div>
+			<button class="button">
+				<div class="button__text">Написать</div>
+				<div class="button__icon">
+					<img src="/assets/icons/raw-icon.svg" alt="">
+				</div>
+			</button>
+			<div class="button-link">
+				<img src="/assets/icons/raw-link.svg" alt="">
+			</div>
+		</div>
+	</div>
+} @else {
+	<h1>Данных нет!!!</h1>
+}
