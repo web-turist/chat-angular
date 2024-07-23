@@ -1,0 +1,75 @@
+:host {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 275px;
+}
+
+.login-form {
+	width: 440px;
+	&__title {
+		font-weight: 800;
+		font-size: 48px;
+		line-height: 56px;
+	}
+	&__wrapper {
+		margin-top: 60px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+	&__label {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		input {
+			color: white;
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+	&__label_username {
+		position: relative;
+		&::after {
+			content: url('/assets/images/input-tg.svg');
+			position: absolute;
+			right: 20px;
+			top: 50%;
+		}
+	}
+	&__label_password {
+		position: relative;
+		&::after {
+			content: url('/assets/images/input-eye.svg');
+			position: absolute;
+			right: 20px;
+			top: 50%;
+		}
+	}
+	&__input {
+		padding: 12px 20px;
+		background: inherit;
+		border: 1px solid #FFFFFF;
+		border-radius: 2px;
+		&::placeholder {
+			font-family: 'JetBrains Mono';
+			font-style: normal;
+			font-weight: 400;
+			font-size: 14px;
+			color: rgba(255, 255, 255, 0.75);
+		}
+	}
+	&__btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 20px;
+		background: #AE7AFF;
+		border: 1px solid #000000;
+		border-radius: 2px;
+	}
+}

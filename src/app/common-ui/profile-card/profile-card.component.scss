@@ -22,6 +22,15 @@
 	}
 }
 
+.button {
+	&__text {
+		font-family: 'JetBrains Mono';
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 24px;
+	}
+}
+
 .avatar {
 	display: grid;
 	grid-template-columns: 70px 1fr;
@@ -44,6 +53,9 @@
 	}
 	&__name {
 		font-weight: 800;
+	}
+	&__nikname {
+		font-weight: 400;
 	}
 }
 

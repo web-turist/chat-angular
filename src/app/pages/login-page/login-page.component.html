@@ -1,1 +1,30 @@
-<p>login-page works!</p>
+<form
+	class="login-form"
+	[formGroup]="form"
+	(ngSubmit)="onSubmit()"
+	>
+	<h1 class="login-form__title">Вход</h1>
+	<div class="login-form__wrapper">
+		<label for="username" class="login-form__label login-form__label_username">Telegram username
+			<input
+			formControlName="username"
+			 class="login-form__input"
+			 type="text"
+			 name="username"
+			 placeholder="Введите логин">
+		</label>
+		<label for="password" class="login-form__label login-form__label_password">Пароль
+			<input
+			formControlName="password"
+			class="login-form__input"
+			type="text"
+			name="password"
+			placeholder="Введите пароль">
+		</label>
+		<button class="login-form__btn" type="submit">Войти</button>
+	</div>
+</form>
+
+<div class="login-big">
+	<img src="/assets/images/login-page-logo.svg" alt="Логотип чата">
+</div>
