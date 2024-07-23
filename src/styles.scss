@@ -1,4 +1,5 @@
 @import './reset.scss';
+@import './fonts.scss';
 
 $dark-color: #000000;
 $light-color: #FFFFFF;
@@ -8,6 +9,9 @@ body {
 	background: $dark-color;
 	color: $light-color;
 	font-family: 'JetBrains Mono';
+	background-image: url(/assets/images/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .button {
