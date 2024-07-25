@@ -43,11 +43,17 @@
 	}
 	&__label_password {
 		position: relative;
-		&::after {
-			content: url('/assets/images/input-eye.svg');
+		.login-form__input-img {
 			position: absolute;
-			right: 20px;
 			top: 50%;
+			right: 20px;
+			cursor: pointer;
+			background: none;
+			border: none;
+			color: white;
+		}
+		.active {
+			color: #AE7AFF;
 		}
 	}
 	&__input {
