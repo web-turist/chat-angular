@@ -1,0 +1,12 @@
+<div class="subscriber">
+	<div class="subscriber__avatar">
+		<!-- <img src="/assets/images/sidebar-avatar-1.png" alt=""> -->
+		<img
+			class="subscriber__avatar-img"
+			[src]="profile.avatarUrl | imgUrl"
+			alt="profile.lastName"
+		>
+	</div>
+	<!-- <a class="subscriber__link" href="#">Сара Коннор</a> -->
+	<a class="subscriber__link" href="#">{{ profile.firstName }} {{ profile.lastName }}</a>
+</div>
