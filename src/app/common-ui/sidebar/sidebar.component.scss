@@ -1,0 +1,146 @@
+:host {
+	padding: 10px 12px;
+	background-color: var(--dark-color);
+	height: 100vh;
+}
+
+.sidebar {
+	height: 100%;
+	position: fixed;
+	&__logo {
+		display: block;
+		padding-left: 16px;
+	}
+}
+
+.menu {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	list-style: none;
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 276px;
+		height: 40px;
+		padding: 0 16px;
+		&:hover {
+			background-color: var(--dark-hover-color);
+		}
+	}
+	&__item-link {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		color: white;
+		font-family: 'JetBrains Mono';
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 24px;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__item-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__item-svg {
+		width: 16px;
+		height: 16px;
+	}
+	&__item-counter {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 26px;
+		height: 18px;
+		background-color: var(--primary-color);
+		color: var(--dark-color);
+	}
+}
+
+.subscribers {
+	width: 300px;
+	margin-top: 20px;
+	min-height: calc(100vh - 30vh);
+	position: relative;
+	&__title {
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		color: rgba(255, 255, 255, 0.75);
+	}
+	&__wrapper {
+		margin-top: 20px;
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+	}
+	&__all {
+		width: 300px;
+		margin-top: 20px;
+		display: flex;
+		align-items: center;
+		gap: 11px;
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		color: var(--light-color);
+		cursor: pointer;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__all-text {
+		color: var(--light-color);
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__all-row {
+		width: 180px;
+		display: flex;
+		align-items: center;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__all-svg {
+		width: 6px;
+		height: 10px;
+	}
+}
+
+.current-user {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	width: 276px;
+	height: 40px;
+	padding-right: 16px;
+	position: fixed;
+	bottom: 20px;
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: var(--light-color);
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__gear {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__gear-svg {
+		width: 13px;
+		height: 13px;
+	}
+}

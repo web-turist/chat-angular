@@ -1,1 +1,69 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+	<div class="sidebar__logo">
+		<img class="sidebar__img" src="/assets/images/sidebar-logo.svg" alt="">
+	</div>
+
+	<nav class="nav">
+		<ul class="menu">
+
+		@for (item of menuItems; track item) {
+			<li class="menu__item">
+				<a href="{{ item.link }}" class="menu__item-link">
+					<div class="menu__item-img">
+						<svg class="menu__item-svg" icon="{{ item.icon }}"></svg>
+					</div>
+					<div class="menu__item-text">{{ item.label }}</div>
+				</a>
+			</li>
+		}
+
+		</ul>
+	</nav>
+
+	<div class="subscribers">
+		<div class="subscribers__title">Подписчики</div>
+		<div class="subscribers__wrapper">
+
+			@for(profile of subscribers$ | async; track profile.id) {
+				<app-subscriber-card
+					[profile]="profile"
+				></app-subscriber-card>
+			}
+
+		</div>
+
+		<a
+			class="subscribers__all"
+			[routerLink]="['/subscribers']"
+			>
+			<div class="subscribers__all-text">Все подписчики</div>
+			<div class="subscribers__all-row">
+				<svg class="subscribers__all-svg" icon="sidebar_icon_arrow"></svg>
+			</div>
+		</a>
+
+		<div class="current-user">
+			@if(me(); as me) {
+
+				<div class="current-user__avatar">
+					@if(me.avatarUrl) {
+						<img [src]="me.avatarUrl | imgUrl" alt="">
+					} @else {
+						<img src="/assets/images/sidebar-avatar-4.png" alt="">
+					}
+				</div>
+
+				<a class="current-user__wrapper" href="#">
+					<div class="current-user__link">{{ me.username }}</div>
+
+					<div class="current-user__gear">
+						<svg class="current-user__gear-svg" icon="sidebar_icon_gear"></svg>
+					</div>
+				</a>
+
+		} @else {
+			Загрузка данных...
+		}
+		</div>
+	</div>
+</div>
