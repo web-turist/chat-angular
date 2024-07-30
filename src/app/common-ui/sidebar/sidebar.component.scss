@@ -39,6 +39,18 @@
 		font-weight: 700;
 		font-size: 14px;
 		line-height: 24px;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__item-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__item-svg {
+		width: 16px;
+		height: 16px;
 	}
 	&__item-counter {
 		display: flex;
@@ -52,6 +64,7 @@
 }
 
 .subscribers {
+	width: 300px;
 	margin-top: 20px;
 	min-height: calc(100vh - 30vh);
 	position: relative;
@@ -68,6 +81,7 @@
 		gap: 22px;
 	}
 	&__all {
+		width: 300px;
 		margin-top: 20px;
 		display: flex;
 		align-items: center;
@@ -75,21 +89,29 @@
 		font-weight: 500;
 		font-size: 12px;
 		line-height: 16px;
-		color: var(--primary-color);
+		color: var(--light-color);
 		cursor: pointer;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__all-text {
+		color: var(--light-color);
+		&:hover {
+			color: var(--primary-color);
+		}
 	}
 	&__all-row {
+		width: 180px;
 		display: flex;
 		align-items: center;
+		&:hover {
+			color: var(--primary-color);
+		}
 	}
-}
-
-.subscriber {
-	display: flex;
-	align-items: center;
-	gap: 12px;
-	&__link {
-		color: white;
+	&__all-svg {
+		width: 6px;
+		height: 10px;
 	}
 }
 
@@ -107,11 +129,18 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		color: var(--primary-color);
+		color: var(--light-color);
+		&:hover {
+			color: var(--primary-color);
+		}
 	}
 	&__gear {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+	&__gear-svg {
+		width: 13px;
+		height: 13px;
 	}
 }

@@ -1,0 +1,23 @@
+.subscriber {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	&__link {
+		color: white;
+		&:hover {
+			color: var(--primary-color);
+		}
+	}
+	&__avatar {
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: var(--dark-color);
+		img {
+			width: 100%;
+			object-fit: contain;
+			overflow: hidden;
+			border-radius: 50%;
+		}
+	}
+}
