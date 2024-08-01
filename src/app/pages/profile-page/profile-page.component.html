@@ -1,1 +1,55 @@
-<p>profile-page works!</p>
+@if (profile$ | async; as profile) {
+	<header class="profile__page-header">
+		<app-profile-header
+		[profile]="profile"
+		></app-profile-header>
+
+		<a
+			class="profile__page-btn"
+			[routerLink]="['/settings']"
+		>
+			<div class="profile__page-text">Редактировать</div>
+			<div class="profile__page-img">
+				<svg class="profile__page-svg" icon="sidebar_icon_gear"></svg>
+			</div>
+		</a>
+	</header>
+
+	<main class="profile-content">
+		<div class="profile-content__left"></div>
+		<div class="profile-content__right">
+			<div class="subscribers__title">Подписчики</div>
+
+			<div class="profile-subscribers">
+				@for(subscribers of subscribers$ | async; track subscribers.id) {
+					<a
+						class="subscriber-avatar-btn"
+						[routerLink]="['./subscribers', subscribers.id]"
+						>
+						<img [src]="subscribers.avatarUrl | imgUrl" alt="">
+					</a>
+				}
+				<a
+					href="" class="to-sibscriber-search"
+					[routerLink]="['/search']"
+				></a>
+			</div>
+
+			<div class="subscribers__title mt32">Навыки</div>
+
+			<div class="skills">
+				@for (skill of [12312, 1212312]; track skill) {
+					<div class="skill-tag">{{ skill }}</div>
+				}
+			</div>
+
+			<div class="subscribers__title mt32">О себе</div>
+			<div class="profile-about">
+				{{ profile.description }}
+				Список навыков, который мы обсудили выше, — основа резюме, но не единственная его часть. Также можно рассказать о себе в классическом смысле — этот раздел можно добавить в сопроводительное письмо.
+			</div>
+
+		</div>
+
+	</main>
+}

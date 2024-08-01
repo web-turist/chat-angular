@@ -1,0 +1,18 @@
+<div class="profile-header">
+
+@if (profile) {
+	<div class="profile-header__avatar">
+		@if (profile.avatarUrl) {
+			<img [src]="profile.avatarUrl" alt="">
+		} @else {
+			<img src="assets/images/profile-avatar.png" alt="">
+		}
+	</div>
+	<div class="profile-header__descr">
+		<div class="profile-header__name">Райан Гослинг</div>
+		<div class="profile-header__nickname">ryan.gosling</div>
+	</div>
+}
+
+</div>
+<hr class="profile-line">
