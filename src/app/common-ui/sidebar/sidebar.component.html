@@ -8,7 +8,7 @@
 
 		@for (item of menuItems; track item) {
 			<li class="menu__item">
-				<a href="{{ item.link }}" class="menu__item-link">
+				<a class="menu__item-link" [routerLink]="[item.link]">
 					<div class="menu__item-img">
 						<svg class="menu__item-svg" icon="{{ item.icon }}"></svg>
 					</div>

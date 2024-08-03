@@ -3,7 +3,7 @@
 @if (profile) {
 	<div class="profile-header__avatar">
 		@if (profile.avatarUrl) {
-			<img [src]="profile.avatarUrl" alt="">
+			<img [src]="profileService.baseApiUrl + profile.avatarUrl" alt="">
 		} @else {
 			<img src="assets/images/profile-avatar.png" alt="">
 		}

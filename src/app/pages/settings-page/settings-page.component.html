@@ -1,0 +1,54 @@
+<app-profile-header></app-profile-header>
+
+<div class="profile-form-wrapper">
+	<form class="profile-form" [formGroup]="form">
+		<label for="first_name" class="profile-form__label">Имя
+			<input class="profile-form__input" type="text" placeholder="Введите данные" formControlName="firstName">
+		</label>
+		<label for="last_name" class="profile-form__label">Фамилия
+			<input class="profile-form__input" type="text" placeholder="Введите данные" formControlName="lastName">
+		</label>
+		<label for="user_name" class="profile-form__label profile-form__label_three">Telegram username
+			<input class="profile-form__input" type="text" value="ryan.gosling" formControlName="username">
+		</label>
+		<label for="description" class="profile-form__label profile-form__label_four">О себе
+			<textarea class="profile-form__input profile-form__area" rows="4" id="description" placeholder="Введите данные" formControlName="description"></textarea>
+		</label>
+		<label class="profile-form__label profile-form__download" for="avatar">Аватарка
+			<div class="avatar-download">
+				<div class="avatar-download__img">
+					<svg class="avatar-download__svg" icon="avatar_default"></svg>
+				</div>
+				<div class="avatar-download__drag">
+					<input class="avatar-download__input" type="file" name="avatar" id="avatar">
+					<div class="avatar-download__icon">
+						<svg class="avatar-download__icon-svg"></svg>s
+					</div>
+					<div class="avatar-download__text">
+						Перетащите изображение или
+						<span class="avatar-download__link">Загрузите </span>
+						(разрешение до 5,000 x 5,000 px)
+					</div>
+				</div>
+			</div>
+		</label>
+		<label for="skills" class="profile-form__label profile-form__six">Навыки
+			<svg class="profile-form__loup-svg" icon="sidebar_icon_loupe"></svg>
+			<input class="profile-form__input" type="text" placeholder="Введите данные" formControlName="stack">
+		</label>
+		<div class="profile-form__down">
+			<div class="profile-form__left">
+				<button class="profile-form__btn profile-form__btn_small">
+					<svg class="profile-form__btn_delete-svg" icon="delete_icon"></svg>
+				</button>
+				<button class="profile-form__btn profile-form__btn_small">
+					<svg class="profile-form__btn_exit-svg" icon="exit_icon"></svg>
+				</button>
+			</div>
+			<div class="profile-form__right">
+				<button class="profile-form__btn">Отмена</button>
+				<button class="profile-form__btn profile-form__btn_active" (click)="onSave()">Сохранить</button>
+			</div>
+		</div>
+	</form>
+</div>
