@@ -7,11 +7,12 @@ import { ProfileHeaderComponent } from '../../common-ui/profile-header/profile-h
 import { SvgIconComponent } from '../../common-ui/svg-icon/svg-icon.component';
 import { ProfileService } from '../../data/services/profile.service';
 import { ImgUrlPipe } from './../../helpers/pipes/img-url.pipe';
+import { PostFeedComponent } from "./post-feed/post-feed.component";
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [ProfileHeaderComponent, AsyncPipe, SvgIconComponent, RouterLink, ImgUrlPipe],
+  imports: [ProfileHeaderComponent, AsyncPipe, SvgIconComponent, RouterLink, ImgUrlPipe, PostFeedComponent],
   templateUrl: './profile-page.component.html',
   styleUrl: './profile-page.component.scss'
 })

@@ -16,17 +16,20 @@
 	</header>
 
 	<main class="profile-content">
-		<div class="profile-content__left"></div>
+		<div class="profile-content__left">
+			<app-post-feed></app-post-feed>
+		</div>
+
 		<div class="profile-content__right">
 			<div class="subscribers__title">Подписчики</div>
 
 			<div class="profile-subscribers">
-				@for(subscribers of subscribers$ | async; track subscribers.id) {
+				@for(subscriber of subscribers$ | async; track subscriber.id) {
 					<a
 						class="subscriber-avatar-btn"
-						[routerLink]="['./subscribers', subscribers.id]"
+						[routerLink]="['/profile', subscriber.id]"
 						>
-						<img [src]="subscribers.avatarUrl | imgUrl" alt="">
+						<img [src]="subscriber.avatarUrl | imgUrl" alt="">
 					</a>
 				}
 				<a
@@ -38,7 +41,7 @@
 			<div class="subscribers__title mt32">Навыки</div>
 
 			<div class="skills">
-				@for (skill of [12312, 1212312]; track skill) {
+				@for (skill of profile.stack; track skill) {
 					<div class="skill-tag">{{ skill }}</div>
 				}
 			</div>
