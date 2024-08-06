@@ -1,0 +1,28 @@
+<div class="search-pannel">
+	<form class="search-form" [formGroup]="serchForm">
+		<label class="search-form__label" for="name">Имя пользователя
+			<div class="search-form__input-wrap">
+				<input class="search-form__input" type="text" name="name" placeholder="Выберите" formControlName="firstName">
+				<svg class="search-form__svg" icon="sidebar_icon_loupe"></svg>
+			</div>
+		</label>
+		<label class="search-form__label" for="lastName">Фамилия
+			<div class="search-form__input-wrap">
+				<input class="search-form__input" type="text" name="lastName" placeholder="Выберите" formControlName="lastName">
+				<svg class="search-form__svg" icon="sidebar_icon_loupe"></svg>
+			</div>
+		</label>
+		<label class="search-form__label" for="city">Город
+			<div class="search-form__input-wrap">
+				<input class="search-form__input" type="text" name="city" placeholder="Выберите">
+				<svg class="search-form__svg" icon="sidebar_icon_loupe"></svg>
+			</div>
+		</label>
+		<label class="search-form__label" for="skills">Навыки
+			<div class="search-form__input-wrap">
+				<input class="search-form__input" type="text" name="skills" placeholder="Выберите" formControlName="stack">
+				<svg class="search-form__svg" icon="sidebar_icon_loupe"></svg>
+			</div>
+		</label>
+	</form>
+</div>
