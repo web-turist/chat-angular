@@ -1,0 +1,32 @@
+<div class="avatar-download">
+	<div class="avatar-download__img">
+		<!-- <svg class="avatar-download__svg" icon="avatar_default"></svg> -->
+		 <!-- <img src="/assets/images/avatar_default.png" alt=""> -->
+		 <img [src]="preview()" alt="">
+	</div>
+	<div
+		class="avatar-download__drag"
+		dnd
+		tabindex="0"
+		(keyup.enter)="fileDrop.click()"
+		(fileDropper)="onFileDropped($event)"
+		>
+		<input
+			class="avatar-download__input"
+			tabindex="-1"
+			type="file"
+			name="avatar"
+			id="avatar"
+			#fileDrop
+			(change)="fileBrowserHandler($event)"
+			>
+		<div class="avatar-download__icon">
+			<svg class="avatar-download__icon-svg" icon="download"></svg>
+		</div>
+		<div class="avatar-download__text">
+			Перетащите изображение или
+			<span class="avatar-download__link">Загрузите </span>
+			(разрешение до 5,000 x 5,000 px)
+		</div>
+	</div>
+</div>
