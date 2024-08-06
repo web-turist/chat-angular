@@ -1,9 +1,9 @@
 import { HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { catchError, switchMap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, filter, switchMap, tap, throwError } from 'rxjs';
 import { AuthService } from './auth.service';
 
-let isRefreshing: boolean = false;
+let isRefreshing$ = new BehaviorSubject<boolean>(false);
 
 export const authTokenInterceptor: HttpInterceptorFn = (req, next) => {
 
@@ -12,7 +12,7 @@ export const authTokenInterceptor: HttpInterceptorFn = (req, next) => {
 
 	if (!token) return next(req);
 
-	if (isRefreshing) {
+	if (isRefreshing$.value) {
 		return refreshAndProceed(authService, req, next);
 	}
 
@@ -39,19 +39,33 @@ const refreshAndProceed = (
 	req: HttpRequest<any>,
 	next: HttpHandlerFn
 ) => {
-	if (!isRefreshing) {
-		isRefreshing = true;
+	if (!isRefreshing$.value) {
+		isRefreshing$.next(true);
 
 		return authService.refreshAuthToken()
 		.pipe(
 			switchMap((res) => {
-				isRefreshing = false;
-				return next(addTokenInHeaders(req, res.access_token));
+
+				return next(addTokenInHeaders(req, res.access_token))
+				.pipe(
+					tap(() => {
+						isRefreshing$.next(false);
+					})
+				)
 			})
 		)
 	}
 
-	return next(addTokenInHeaders(req, authService.token!))
+	if (req.url.includes('refresh')) return next(addTokenInHeaders(req, authService.token!));
+
+	return isRefreshing$.pipe(
+		filter(isRefreshing$ => !isRefreshing$),
+		switchMap(res => {
+			return next(addTokenInHeaders(req, authService.token!))
+		})
+	)
+
+
 }
 
 const addTokenInHeaders = (req: HttpRequest<any>, token: string) => {
