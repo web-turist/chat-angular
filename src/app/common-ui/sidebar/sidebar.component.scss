@@ -134,6 +134,17 @@
 			color: var(--primary-color);
 		}
 	}
+	&__avatar {
+		min-width: 32px;
+		height: 32px;
+		border-radius: 50px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50px;
+		}
+	}
 	&__gear {
 		display: flex;
 		align-items: center;

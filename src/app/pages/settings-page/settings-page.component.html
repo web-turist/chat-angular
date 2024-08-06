@@ -14,24 +14,11 @@
 		<label for="description" class="profile-form__label profile-form__label_four">О себе
 			<textarea class="profile-form__input profile-form__area" rows="4" id="description" placeholder="Введите данные" formControlName="description"></textarea>
 		</label>
-		<label class="profile-form__label profile-form__download" for="avatar">Аватарка
-			<div class="avatar-download">
-				<div class="avatar-download__img">
-					<svg class="avatar-download__svg" icon="avatar_default"></svg>
-				</div>
-				<div class="avatar-download__drag">
-					<input class="avatar-download__input" type="file" name="avatar" id="avatar">
-					<div class="avatar-download__icon">
-						<svg class="avatar-download__icon-svg"></svg>s
-					</div>
-					<div class="avatar-download__text">
-						Перетащите изображение или
-						<span class="avatar-download__link">Загрузите </span>
-						(разрешение до 5,000 x 5,000 px)
-					</div>
-				</div>
-			</div>
+
+		<label class="profile-form__label profile-form__download">Аватарка
+			<app-avatar-upload></app-avatar-upload>
 		</label>
+
 		<label for="skills" class="profile-form__label profile-form__six">Навыки
 			<svg class="profile-form__loup-svg" icon="sidebar_icon_loupe"></svg>
 			<input class="profile-form__input" type="text" placeholder="Введите данные" formControlName="stack">
